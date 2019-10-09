@@ -1,0 +1,44 @@
+
+body {background-color: white; margin: 10px; width: 600px }
+
+code { font-family:Courier New, Courier; font-size: 12pt; color:#000066; }
+
+div.info { font-family:Times New Roman,Times;
+	   background-color: #ECE9D8; width: 600px;
+	   margin: 20px; font-size: 12pt; }
+h1 { font-family:Verdana, Arial, Helvetica; font-size: 18pt; 
+     font-weight:bold; text-align: center; }
+
+div.question {font-family:Times New Roman,Times;font-size:12pt;
+	      margin: 12px 4px 24px 12px; width: 600px; }
+div.response {font-family:Times New Roman,Times; font-size: 12pt;
+	      margin: 8px 4px 0px 20px; }
+
+table.choices  {font-family:Times New Roman,Times; font-size: 12pt;
+	        margin: 0px 4px 0px 20px; }
+table.choices tr { valign=middle; }
+table.choices td.button { align=center; width=20; }
+table.choices td.text   { align=left; width=100%; }
+
+p.titlebar {font-family:Verdana, Arial, Helvetica;font-size:10pt;font-weight:bold;color:#FFFFB7;margin:2px 0px}
+div.warning  {font-family:Verdana, Arial, Helvetica;font-size:10pt;
+	      text-align:center;font-weight:bold;color:#CC0000;margin:1px;
+	      width: 600px; }
+div.inlinewarning  {font-family:Verdana, Arial, Helvetica;font-size:10pt;
+	      text-align:center;font-weight:bold;color:#CC0000;margin:1px; }
+div.buttons {font-family:Courier New, Courier; font-size: 12pt; 
+	     text-align: center; width: 600px; 
+	     margin-top: 12px; }
+div.inlinebuttons { font-family:Courier New, Courier; font-size: 12pt; 
+	      text-align: center; margin-top: 12px; }
+
+div.footer { font-style: italic; font-size: 8pt; color: #006600; 
+	     margin: 8px 0px 0px 0px; }
+
+div.code { font-family:Courier New, Courier; font-size:10pt; color:#000066;
+	   margin:8px 0px 8px 20px; }
+pre      { font-family: Courier New, Courier; font-size: 10pt; color: #000066;
+	   margin:8px 0px 8px 20px; }
+
+sup { font-size: 9; vertical-align: top; }
+sub { font-size: 9; vertical-align: bottom; }

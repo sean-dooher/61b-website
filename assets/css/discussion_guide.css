@@ -1,0 +1,92 @@
+#navbar {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 10px;
+}
+.navitem {
+    color: #BBB;
+    display: inline-block;
+    margin-left: 40px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.navclass, .navitem:hover {
+    color: white;
+}
+html {
+    background-color: #EEE;
+    padding: 0 30px;
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", sans-serif;
+}
+body {
+    margin: 0px auto;
+    max-width: 800px;
+    background-color: white;
+    padding: 60px 30px 30px;
+    border-left: 1px solid #BE0712;
+    border-right: 1px solid #BE0712;
+}
+h1#title {
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 28px;
+}
+h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 20px 0 5px;
+    border-bottom: 1px solid #CCC;
+    padding: 0 0 5px;
+    color: #888;
+}
+h4 {
+    margin: 5px 0 0;
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #BE0712;
+}
+a:hover {
+    color: #8CDD81;
+}
+pre {
+    background-color: #F0F0F0;
+    padding: 10px 20px;
+}
+table, th, td {
+   border-collapse: collapse;
+   border: 1px solid black;
+   text-align: center;
+   padding: 5px;
+}
+
+.dialog {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    background: #ddd;
+    padding: 13px;
+}
+
+.forbiddendialog {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    background: #FF74A3;
+    padding: 13px;
+}
+
+.pquote {
+    float: right;
+    width: 200px;
+    background: #ddf;
+    font-weight: bold;
+    padding: 13px;
+    margin: 0 13px 13px 0;
+}

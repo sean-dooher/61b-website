@@ -1,0 +1,29 @@
+table {
+    max-width: 900px;
+    margin: 10px auto 0;
+}
+table > tbody > tr > td {
+    max-width: 300px;
+    vertical-align: top;
+    padding: 0 10px 10px;
+    font-size: 14px;
+}
+table > tbody > tr:nth-child(2n) > td {
+    padding-bottom: 20px;
+}
+.photo {
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    margin: 10px auto 0;
+}
+.photo-narrow {
+    height: 200px;
+    width: 143px;
+    overflow: hidden;
+    margin: 10px auto 0;
+}
+
+address {
+    font-size: 12px;
+}

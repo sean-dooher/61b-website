@@ -1,0 +1,12 @@
+.pquote {
+    float: right;
+    width: 200px;
+    background: #ddf;
+    font-weight: bold;
+    padding: 13px;
+    margin: 0 13px 13px 0;
+}
+
+blockquote {
+    margin: 0; /* gets rid of the default blockquote margin */
+}

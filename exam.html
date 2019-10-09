@@ -1,0 +1,93 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400" rel="stylesheet">
+
+<iframe class="announce" src="https://docs.google.com/document/d/1VeIEtw4bMyDSlOF5gCDIjiENEFCTgIqDsAeMVPTxT-w/edit?rm=minimal"></iframe>
+<p id="timer">1:50:00</p>
+<div id="button">START</div>
+
+<script>
+	minutesToText = function(minutes) {
+		return Math.floor(minutes / 60) + ":" + minutes % 60 + ":00";
+	}
+
+	var lengthInMinutes = prompt("Please enter the length of the exam in minutes", 110);
+	$("#timer").text(minutesToText(lengthInMinutes));
+    document.getElementById("button").onclick = function(){
+        document.getElementById("button").style.display = "none";
+        var startTime = new Date().getTime();
+        var endTime = startTime + lengthInMinutes*60000;
+
+        var x = setInterval(function() {
+
+            var timeRemaining = endTime - new Date().getTime();
+
+            var hoursRemaining = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutesRemaining = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            var secondsRemaining = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById("timer").innerHTML = hoursRemaining + ":"
+                + Math.floor(minutesRemaining/10) + minutesRemaining%10 + ":"
+                + Math.floor(secondsRemaining/10) + secondsRemaining%10;
+
+            if (timeRemaining < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "0:00:00";
+                document.getElementById("timer").style.color = "red";
+            }
+        }, 250);
+    };
+
+    $(function() {
+        $("#timer").draggable();
+    });
+
+    // Warn if page wants to reload.
+    window.onbeforeunload = function() {
+        return "";
+    }
+</script>
+
+<style>
+    .announce {
+        width: 100%;
+        height:100%;
+        display: inline-block;
+    }
+
+    #timer {
+        border: solid 3px black;
+        padding: 25px;
+        font-size: 72px;
+        display: inline-block;
+        position: fixed;
+        top: 0;
+        background-color: white;
+        font-family: 'Inconsolata', monospace;
+        cursor:default;
+        margin: 0;
+    }
+
+    #button {
+        border: solid 3px black;
+        padding: 25px;
+        font-size: 36px;
+        display: inline-block;
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+        font-family: 'Inconsolata', monospace;
+        cursor:default;
+    }
+
+    #button:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<!-- ADAPTED FROM:
+    https://www.w3schools.com/howto/howto_js_countdown.asp
+    http://jqueryui.com/draggable/
+-->

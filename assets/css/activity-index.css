@@ -1,0 +1,8 @@
+
+body { font-size: 10pt; }
+table { font-size: 10pt; }
+
+ol li   { margin-left: -10pt; }
+ol ol li { margin-left: -15pt; }
+
+.selected { color: red }

@@ -1,0 +1,15 @@
+
+body { font-family: Verdana, Arial, Helvetica; font-size: 11pt; width: 600px;
+       margin-left: 20px; margin-right: 20px;
+       background-color: #FFDBD2;
+     }
+
+div.code { font-family:Courier New, Courier; font-size:10pt; color:#000066;
+	   margin:8px 0px 8px 20px; }
+pre      { font-family: Courier New, Courier; font-size: 10pt; color: #000066;
+	   margin:8px 0px 8px 20px; }
+
+h3 { font-size: 14pt; margin-bottom: 2ex; }
+
+sup { font-size: 9; vertical-align: top; }
+sub { font-size: 9; vertical-align: bottom; }

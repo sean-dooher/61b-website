@@ -1,0 +1,160 @@
+#navbar {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 10px;
+}
+.navitem {
+    color: #BBB;
+    display: inline-block;
+    margin-left: 40px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.navclass, .navitem:hover {
+    color: white;
+}
+html {
+    background-color: #EEE;
+    padding: 0 30px;
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", sans-serif;
+}
+body {
+    margin: 0px auto;
+    max-width: 800px;
+    background-color: white;
+    padding: 60px 30px 30px;
+    border-left: 1px solid #61B329;
+    border-right: 1px solid #61B329;
+}
+h1#title {
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 28px;
+}
+center.fancy {
+    font-style: italic;
+    font-size: 14px;
+    padding-top: 10px;
+}
+pre.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+pre.centeredmid {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 20px 0 5px;
+    border-bottom: 1px solid #CCC;
+    padding: 0 0 5px;
+    color: #888;
+}
+h4 {
+    margin: 5px 0 0;
+    font-size: 15px;
+}
+li, p {
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: #61B329;
+}
+a:hover {
+    color: #8CDD81;
+}
+pre {
+    background-color: #F0F0F0;
+    line-height: normal;    
+    padding: 10px 20px;
+}
+.pquote {
+    float: right;
+    width: 200px;
+    background: #ddf;
+    font-weight: bold;
+    padding: 13px;
+    margin: 0 13px 13px 0;
+}
+blockquote {
+    margin: 0; /* gets rid of the default blockquote margin */
+}
+aside.pquote {
+    margin: 10px 0 10px 30px;
+    padding: 10px 15px;
+}
+table.APItable {
+    border: 1px solid black;
+    background-color: #FFFFFF;
+    border-collapse: collapse;    
+}
+table.APItable tr {
+
+    border: 1px solid black;
+    solid: #000;
+}
+table.APItable td {
+    padding: 2px 8px 2px 8px;
+    border: 1px solid black;
+    solid: #000;
+}
+
+.tableSubHeadingColor {
+    background-color: #EEEEFF;
+}
+.altColor {
+    background-color:#eeeeef;
+}
+.rowColor {
+    background-color:#ffffff;
+}
+.overviewSummary td, .packageSummary td, .contentContainer ul.blockList li.blockList td, .summary td, .classUseContainer td, .constantValuesContainer td {
+    text-align:left;
+    padding:3px 3px 3px 7px;
+}
+th.colFirst, th.colLast, th.colOne, .constantValuesContainer th {
+    background:#dee3e9;
+    border-top:1px solid #9eadc0;
+    border-bottom:1px solid #9eadc0;
+    text-align:left;
+    padding:3px 3px 3px 7px;
+}
+td.colOne a:link, td.colOne a:active, td.colOne a:visited, td.colOne a:hover, td.colFirst a:link, td.colFirst a:active, td.colFirst a:visited, td.colFirst a:hover, td.colLast a:link, td.colLast a:active, td.colLast a:visited, td.colLast a:hover, .constantValuesContainer td a:link, .constantValuesContainer td a:active, .constantValuesContainer td a:visited, .constantValuesContainer td a:hover {
+    font-weight:bold;
+}
+td.colFirst, th.colFirst {
+    border-left:1px solid #9eadc0;
+    white-space:nowrap;
+}
+td.colLast, th.colLast {
+    border-right:1px solid #9eadc0;
+}
+td.colOne, th.colOne {
+    border-right:1px solid #9eadc0;
+    border-left:1px solid #9eadc0;
+}
+table.overviewSummary  {
+    padding:0px;
+    margin-left:0px;
+}
+table.overviewSummary td.colFirst, table.overviewSummary th.colFirst,
+table.overviewSummary td.colOne, table.overviewSummary th.colOne {
+    width:25%;
+    vertical-align:middle;
+}
+table.packageSummary td.colFirst, table.overviewSummary th.colFirst {
+    width:25%;
+    vertical-align:middle;
+}

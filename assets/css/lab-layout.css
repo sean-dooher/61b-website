@@ -1,0 +1,96 @@
+a {
+	color: #00f;
+}
+
+a img {
+	border: none;
+}
+
+a:visited {
+	color: #006;
+}
+
+a:hover {
+	color: #f00;
+}
+
+h1 {
+	font-size: 150%;
+}
+
+h2 {
+	font-size: 125%;
+}
+
+h3 {
+	font-size: 110%;
+}
+
+th {
+	text-align: center;
+}
+
+weeknumber {
+	font-weight: bold;
+	font-size: 150%;
+}
+
+lecdate {
+	font-weight: bold;
+	color: green;
+}
+
+lecnumber {
+	font-size: 80%;
+	color: black;
+}
+
+lecdesc {
+	color: black;
+}
+
+lecreadinghead {
+	font-weight: bold;
+	color: black;
+}
+
+lecreading {
+	color: maroon;
+}
+
+hw {
+	color: blue;
+}
+
+proj {
+	color: red;
+	font-weight: bold;
+}
+
+exam {
+	color: red;
+	font-style: bold;
+	font-size: 125%;
+}
+
+lechighlight {
+	color:red;
+}
+
+body {
+	background-color: #fff;
+	color: black;
+	font-size: 120%
+}
+
+table {
+	font-size: 100%
+}
+
+address {
+	font-size: 90%
+}
+
+span.error {
+        color: red;
+}

@@ -1,0 +1,66 @@
+
+body { width: 600px; background-color: #fefdd3; 
+       font-family:Times New Roman,Times; font-size: 12pt;
+       margin-left: 5px; margin-right: 5px; }
+
+div.info { font-family:Times New Roman,Times;
+	   background-color: #ECE9D8; width: 600px;
+	   font-size: 12pt; }
+
+div.question {font-family:Times New Roman,Times; font-size:12pt;
+	      margin: 12px 4px 24px 12px; width: 600px; 
+	      border-style: solid; border-width: medium; border-color: black;
+	      padding: 10px;
+              background-color: #f7f4a9; }
+div.response {font-family:Times New Roman,Times; font-size: 12pt;
+	      margin: 8px 4px 0px 20px; }
+
+table.choices  {font-family:Times New Roman,Times; font-size: 12pt;
+	        margin: 5px 20px 0px 20px; background-color: white; }
+table.choices tr { valign=middle; cell-spacing: }
+table.choices td.button { align: center; width: 20px; }
+table.choices td.checkbox { align: center; width: 20px; }
+table.choices td.text   { align: left; }
+
+textarea { background-color: white; }
+
+table.program-result { 
+    font-family: Courier New, Courier; font-size: 12pt;
+    border: "thin";
+    margin: 5px 0px 0px 0px; background-color: #f7f4a9;
+    width: 600px; }
+table.program-result td.program { align: left; width: 50%; font-size: 10pt; }
+table.program-result td.response { align: left; width 50%; valign: center; }
+table.program-result th { font-family: Verdana, Arial, Helvetica; 
+			  font-weight: bold; }
+
+input { font-family: Courier New, Courier; font-size: 10pt; }
+
+p.titlebar { font-family:Verdana, Arial, Helvetica;font-size:10pt;
+	     font-weight:bold;color:#FFFFB7;margin:2px 0px}
+div.warning  { font-family:Verdana, Arial, Helvetica;font-size:10pt;
+	       text-align:center;font-weight:bold;color:#CC0000;margin:1px;
+	       width: 600px; }
+div.inlinewarning  { font-family:Verdana, Arial, Helvetica;font-size:10pt;
+	       text-align:center;font-weight:bold;color:#CC0000;margin:1px; }
+div.buttons { font-family:Courier New, Courier; font-size: 12pt; 
+	      text-align: center; width: 600px; 
+	      margin-top: 12px; }
+div.inlinebuttons { font-family:Courier New, Courier; font-size: 12pt; 
+	      text-align: center; margin-top: 12px; }
+
+div.code { font-family:Courier New, Courier; font-size:10pt; color:#000066;
+	   margin:8px 0px 8px 20px; }
+pre      { font-family: Courier New, Courier; font-size: 10pt; color: #000066;
+	   margin:8px 0px 8px 20px; }
+div.footer { font-style: italic; font-size: 8pt; color: #006600; 
+	     margin: 8px 0px 0px 0px; }
+
+
+h1 { font-family:Verdana, Arial, Helvetica; font-size: 14pt; 
+     font-weight:bold; text-align: center; }
+h3 { font-family:Verdana, Arial, Helvetica; font-size: 14pt; 
+     font-weight:bold; text-align: center; }
+
+sup { font-size: 9; vertical-align: top; }
+sub { font-size: 9; vertical-align: bottom; }
