@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 8 | CS 61B Fall 2019</title>
+    <meta charset="UTF-8">
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css">
+    <link href="../../../assets/css/common.css" rel="stylesheet" type="text/css">
+    <link href="../../../assets/css/lab.css" rel="stylesheet" type="text/css">
+    <link href="../../../assets/css/highlight/styles/tomorrow.css" rel="stylesheet" type="text/css">
+    
+    <script src="../../../assets/js/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../../assets/css/highlight/highlight.pack.js" type="text/javascript"></script> 
+    <script src="../../../assets/js/sidebar.js" type="text/javascript"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+
+    tex2jax: {inlineMath: [["$", "$"]]}
+})
+   
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML-full"></script>
+</head>
+<body>
+    <div class="navbar-top"><div id="navitems">
+        <a href="../../../index.html"><div class="navitem">Main</div></a>
+        <a href="../../../about.html"><div class="navitem">Course Info</div></a>
+        <a href="../../../staff.html"><div class="navitem">Staff</div></a>
+        <!--<a href="../../../assign.html"><div class="navitem">Assignments</div></a>-->
+        <a href="https://inst.eecs.berkeley.edu/~cs61b/fa19/screencasts" target="_blank"><div class="navitem">Screencasts</div></a>
+        <a href="https://inst.eecs.berkeley.edu/~cs61b/fa19/cgi-bin/calnet-auth-scores.cgi" target="_blank"><div class="navitem">Scores</div></a>
+        <a href="../../../resources.html"><div class="navitem">Resources</div></a>
+        <a href="https://piazza.com/class/jkx2gta66436jq"><div class="navitem">Piazza</div></a>
+    </div></div>
+    <div id="sidebar">
+        <div id="sidebar-content">
+            <h3>Navigation</h3>
+            <ul>
+  <li><a href="#navigation">Navigation</a></li>
+  <li><a href="#a-introduction">A. Introduction</a></li>
+  <ul>
+    <li><a href="#writing-tests">Writing Tests</a></li>
+  </ul>
+  <li><a href="#b-unit-testing">B. Unit Testing</a></li>
+  <li><a href="#c-integration-testing">C. Integration Testing</a></li>
+  <li><a href="#d-running-enigma-in-intellij">D. Running Enigma in IntelliJ</a></li>
+</ul>
+        </div>
+    </div>
+    <div id="content-container"><main id="content">
+        <header class="title">Lab 8: Testing Enigma</header>
+        
+<h2 id="navigation">Navigation</h2>
+
+
+<ul>
+  <li><a href="#writing-tests">Writing Tests</a></li>
+  <li><a href="#b-unit-testing">Unit Testing</a></li>
+  <li><a href="#c-integration-testing">Integration Testing</a></li>
+  <li><a href="#d-running-enigma-in-intellij">Running Enigma in IntelliJ</a></li>
+</ul>
+
+
+<h2 id="a-introduction">A. Introduction</h2>
+
+
+<p>Pull the files for lab 8 from the skeleton.</p>
+
+<pre><code>git fetch shared
+git merge shared/lab8 &#x2d;m &quot;Start lab8&quot;
+git push</code></pre>
+
+
+<h3 id="writing-tests">Writing Tests</h3>
+
+
+<p>In this lab, we will go over how to test your project. There are two components to testing: unit testing and integration testing. Unit tests make sure that a function or subset of functions work properly when given a specific input. Integration tests ensure that the entire project works properly as a whole. Both are important because while individual functions may work properly in an isolated environment, once they start taking in values from other parts of the program, they could break. <a href="https://www.youtube.com/watch?v=0GypdsJulKE">Here's a visual demonstration of why we need integration tests</a>.</p>
+
+
+<h2 id="b-unit-testing">B. Unit Testing</h2>
+
+
+<p>In this section, we will walk through writing your own unit tests. If you decide to create a new file outside of <code>PermutationTest.java</code> or <code>MovingRotorTest.java</code>, make sure to link it in <code>UnitTest.java</code>. We've provided some unit tests you can build off of in <code>MoreEnigmaTests.java</code>, which you should copy into the appropriate test files within your project to run.</p>
+
+<p>Your goal for this lab will be to understand a general approach to writing your own unit tests. Let's start off by writing a simple unit test for the Permutation class! Look in <code>MoreEnigmaTests.java</code>. We have provided a basic outline to test the <code>Permutation::invert</code> method:</p>
+
+<pre><code>@Test
+public void testInvertChar() {
+    Permutation p = new Permutation(&quot;(PNH) (ABDFIKLZYXW) (JC)&quot;, new CharacterRange(&#x27;A&#x27;, &#x27;Z&#x27;));
+    /* TODO: Add additional assert statements here! */
+}</code></pre>
+
+<p>In unit testing, we aim to isolate certain parts of the program - in this case, the <code>invert</code> method - and test that those individual parts are functioning correctly. Recall that the invert function is defined as follows:</p>
+
+<pre><code>/** Return the result of applying the inverse of this permutation to C. */
+int invert(char c) { ... }</code></pre>
+
+<p>Given the permutation above, we know the inverse of 'B' should return 'A'. We also know that since the letter 'G' is not explicitly included in any of the cycles - it maps to itself - so we'd expect a call to invert to return 'G'. We can add two assert statements to test this:</p>
+
+<pre><code>assertEquals(p.invert(&#x27;B&#x27;), &#x27;A&#x27;);
+assertEquals(p.invert(&#x27;G&#x27;), &#x27;G&#x27;);</code></pre>
+
+<p>Write a few more of your own test cases for this permutation. What should a call to <code>p.invert(&#x27;A&#x27;)</code> return? What about a call to <code>p.invert(&#x27;J&#x27;)</code>?</p>
+
+<p>Now that you've written your first unit test, let's test it within your project! Note that in order to run the tests in <code>MoreEnigmaTests.java</code>, you'll have to copy each test into one of your testing files in the Enigma directory. Since we're testing a method within the Permutation class, <code>testInvertChar</code> best belongs in the <code>PermutationTest.java</code> file.</p>
+
+<p>While getting tests to pass actually requires that you completely implement the functions being tested, you don't have to pass them immediately at the time of writing them. Instead, you should create scenarios where you know what is expected to happen. As you fill out the methods, don't forget to run these tests to make sure that your method is correct.</p>
+
+<p>This is a common paradigm known as Test-Driven Development (TDD). It's very helpful because it forces you to actually know the expected behavior of the method for a certain input - knowing this will give you an idea of what and how you should implement it.</p>
+
+<p>Feel free to fill in <code>testPermuteChar</code> and <code>testDerangement</code> following our approach for <code>testInvertChar</code> and copy them into your <code>PermutationTest.java</code> file.</p>
+
+
+<h2 id="c-integration-testing">C. Integration Testing</h2>
+
+
+<p>For Enigma, an integration test will test the functionality of the machine as a whole (as opposed to any of the individual parts). In this example, we will be testing that your Enigma machine properly handles <a href="https://www.youtube.com/watch?v=5StZlF-clPc&index=3&list=PLe6eaTVou9VQoL5vGFJCH3r6bJbh04hao">double stepping</a>. We'll base our test off of the 4-rotor example as described in the spec.</p>
+
+<p>In <code>MoreEnigmaTests.java</code>. We have provided a helper method <code>getSetting</code> to return the rotor positions. This will help us track the settings of our rotors step by step. We've provided the code to initialize the machine similar to the simple example in the spec: we have an alphabet with only the letters A-D, four rotors numbered R1-R4, each of which has one notch on its ring at the C position. We start with the rotors set at AAAA.</p>
+
+<pre><code>@Test
+public void testDoubleStep() {
+    Alphabet ac = new CharacterRange(&#x27;A&#x27;, &#x27;D&#x27;);
+    Rotor one = new Reflector(&quot;R1&quot;, new Permutation(&quot;(AC) (BD)&quot;, ac));
+    Rotor two = new MovingRotor(&quot;R2&quot;, new Permutation(&quot;(ABCD)&quot;, ac), &quot;C&quot;);
+    Rotor three = new MovingRotor(&quot;R3&quot;, new Permutation(&quot;(ABCD)&quot;, ac), &quot;C&quot;);
+    Rotor four = new MovingRotor(&quot;R4&quot;, new Permutation(&quot;(ABCD)&quot;, ac), &quot;C&quot;);
+    String setting = &quot;AAA&quot;;
+    Rotor[] machineRotors = {one, two, three, four};
+    String[] rotors = {&quot;R1&quot;, &quot;R2&quot;, &quot;R3&quot;, &quot;R4&quot;};
+    Machine mach = new Machine(ac, 4, 3, new ArrayList&lt;&gt;(Arrays.asList(machineRotors)));
+    mach.insertRotors(rotors);
+    mach.setRotors(setting);
+    /* TODO: Add additional assert statements here! */
+}</code></pre>
+
+<p>Before we do anything, our rotors are all set to position 'A'. Let's test that using <code>getSetting</code>.</p>
+
+<pre><code>assertEquals(&quot;AAAA&quot;, getSetting(ac, machineRotors));</code></pre>
+
+<p>When we input a letter, rotor 4 advances one position. Let's simulate this keypress and check the setting is what we expect.</p>
+
+<pre><code>mach.convert(&#x27;a&#x27;);
+assertEquals(&quot;AAAB&quot;, getSetting(ac, machineRotors));</code></pre>
+
+<p>Follow this pattern until you hit the double stepping case. For a more in-depth explanation for a similar example, check out this <a href="https://www.youtube.com/watch?v=YeKmzLlfiJQ&list=PLe6eaTVou9VQoL5vGFJCH3r6bJbh04hao&index=4">video walkthrough</a>.</p>
+
+<p>Now you can test <code>testDoubleStep</code> within your project. Notice that this isn't testing a particular component of the machine in isolation - this tests the Machine as a whole. Feel free to create a new class, say <code>MachineTest</code>, and copy <code>testDoubleStep</code> into it. Don't forget to link it in <code>UnitTest.java</code>. We encourage you to use this framework for creating more tests, now that you know how to initialize and test the overall machine.</p>
+
+
+<h2 id="d-running-enigma-in-intellij">D. Running Enigma in IntelliJ</h2>
+
+
+<p>As touched upon in the <a href="https://inst.eecs.berkeley.edu/~cs61b/fa19/materials/proj/proj1/index.html#input-and-output">spec</a>, you can run your program on the command line. In this section, we will cover how to run Enigma on IntelliJ with input and output files.</p>
+
+<p>We've provided two input files, <code>gitgood.inp</code> and <code>riptide.inp</code>. You can copy them into your testing/correct/ directory in your project.</p>
+
+<p>Navigate to the Main class in your project. Try clicking the green play button next to the <code>main</code> method in Main, and select 'Run Main.main()'. If you haven't previously inputted arguments, you should see an error like this:</p>
+
+<p><img src="img/argerror.png" alt="No Argument Error"></p>
+
+<p>We got this error because we haven't passed in any arguments to the program! Notice that between 1 and 3 arguments can be passed in:</p>
+
+<ul>
+  <li>ARGS[0] is the name of a configuration file.</li>
+  <li>ARGS[1] names an input file containing messages.</li>
+  <li>ARGS[2] names an output file for processed messages.</li>
+</ul>
+
+<p>At the top right hand side of your screen, you should see a dropdown menu now labeled Main. You should click the dropdown and select 'Edit Configurations...'</p>
+
+<p><img src="img/editconfig.png" alt="Edit Configurations"></p>
+
+<p>A window should pop up, and you should be able to enter in your arguments in the Program Arguments bar. If you've copied our provided input files into your directory, you should be able to refer to your <code>default.conf</code> configuration file and the <code>riptide.inp</code> file. Make sure you specify the correct path to your files, with respect to your Working Directory.</p>
+
+<p><img src="img/addargs.png" alt="Program Arguments"></p>
+
+<p>This is equivalent to specifying the program arguments as such:</p>
+
+<pre><code>java &#x2d;ea enigma.Main [configuration file] [input file] [output file]</code></pre>
+
+<p>Now run <code>Main.main()</code>. We haven't specified an output file, so you should see the output of your machine in standard output. If you're wondering, you've just encrypted a verse in <a href="https://www.youtube.com/watch?v=jXY5rRAXhFQ">last summer's CS61BL Musical</a>! See if you can spot your favorite TA ;)</p>
+
+<p>As a reference, you should see output like below. You're welcome to make a new output file and add that to your program arguments if you prefer.</p>
+
+<p><img src="img/riptideout.png" alt="Expected Output"></p>
+
+<p>We encourage you to write more of your own input and configuration files and test them as above. Remember, we expect that you have added adequate unit tests and additional integration tests beyond those provided in the skeleton. Hopefully this lab helps with that process and good luck with Enigma! 🐳</p>
+
+<p>There is nothing to submit for this lab.</p>
+    </main></div>
+</body>
+</html>

@@ -535,11 +535,13 @@ are irrelevant.  Each file has the following contents:</p>
 
 <ul>
   <li>A string of the form $C_1C_2\cdots C_n$ where the $C_i$ are
-  non-blank characters other than "<code>*</code>", "<code>(</code>" and "<code>)</code>".
+  non-blank ASCII characters other than "<code>*</code>", "<code>(</code>" and "<code>)</code>".
   This is the alphabet of the machine, giving both the character set and the
   ordering of the characters around a rotor.  For the examples in this
   document, we use just the upper-case alphabet (as did the Enigma machines),
-  but your solution must deal with general alphabets.</li>
+  but your solution must deal with general alphabets.
+  In the following, we will generally refer to the characters in this alphabet
+  as "letters", even when they include digts, punctuation, or other symbols.</li>
   <li>Two integer numerals, $S > P \ge 0$, where $S$ is the number of
   rotor slots (including the reflector)
   and $P$ is the number of pawls&mdash;that is,
@@ -587,7 +589,11 @@ Given the configuration file above, a settings line looks like this:</p>
 
 <pre><code>* B Beta III IV I AXLE (YF) (ZH)</code></pre>
 
-<p>This particular example means that the rotors used are reflector B,
+<p>The asterisk must appear in the first column.
+Other items on the line may be separated from each other by tabs and blanks;
+adjacent items that are rotor names or consist entirely of letters from the
+alphabet must be so separated.
+This particular example means that the rotors used are reflector B,
 and rotors Beta, III, IV, and I, with rotor I in the rightmost, or fast,
 slot.  The remaining parenthesized items indicate that the letter pair
 Y and F and the pair Z and M are steckered (swapped going in from
@@ -604,7 +610,9 @@ may follow (including none).</p>
 
 <p>After each settings line comes a message on any number of lines.
 Each line of a message
-consists only of letters, spaces, and tabs (0 or more).
+consists only of letters (here meaning characters from the specified alphabet),
+spaces,
+and tabs (0 or more).
 The program should ignore the blanks and tabs.
 The end of message is indicated either by the
 end of the input or by a new configuration line (distinguished by its
@@ -672,6 +680,7 @@ VVICV UDUER EYNPF FMNBJ VGQ                     |
   <li>The first rotor might not be a reflector.</li>
   <li>The initial positions string might be the wrong length or contain
   characters not in the alphabet.</li>
+  <li>Messages containing characters from outside the alphabet.</li>
 </ul>
 
 <p>A significant amount of a program will typically be devoted to
